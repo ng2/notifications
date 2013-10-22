@@ -4,7 +4,7 @@
 ## usage
 Dropin somewhere in your config's a setup your defaults with
 
-```
+```js
 NotificationProvider.setDefaults({
   image: "path/to/your/default/image.png",
   title: "my default title",
@@ -15,7 +15,7 @@ NotificationProvider.setDefaults({
 
 And then from anywhere in your code create a new notification with
 
-```
+```js
 Notification.create({
   image: "path/to/your/awesome-image.png",
   title: "Ahoy!",
