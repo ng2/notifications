@@ -30,4 +30,4 @@ Notification.create({
 
 You can smash a bunch of `Notification.create` together and have the service queue them all with different timings so after the users gives the app permissions BAM, the notifications start flowing :)
 
-## As shown in [leostera.com](leostera.com). Just click the lambda.
+## As shown in [leostera.com](http://leostera.com). Just click the lambda.
