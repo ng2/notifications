@@ -1,5 +1,5 @@
 {
-  "name": "notifications",
+  "name": "ng2-notifications",
   "repo": "ng2/notifications",
   "description": "a web notifications module for angular",
   "version": "0.0.1",

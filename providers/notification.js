@@ -13,7 +13,7 @@
 */
 
 angular
-.module('notifications')
+.module('ng2-notifications')
 .provider('Notification', function () {
 
   var defaults = {}
