@@ -31,3 +31,6 @@ Notification.create({
 You can smash a bunch of `Notification.create` together and have the service queue them all with different timings so after the users gives the app permissions BAM, the notifications start flowing :)
 
 ## As shown in [leostera.com](http://leostera.com). Just click the lambda.
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/ng2/notifications/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
