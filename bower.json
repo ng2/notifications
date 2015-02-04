@@ -1,0 +1,15 @@
+{
+  "name": "ng2-notifications",
+  "main": "providers/notification.js",
+  "version": "0.0.1",
+  "description": "Browser native notification provider",
+  "homepage": "https://github.com/ng2/notifications",
+  "private": false,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
