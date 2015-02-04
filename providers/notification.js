@@ -51,25 +51,23 @@ angular
                  * or a time in milliseconds.
                  */
                 var createNotification = function (options) {
-                    options.image = options.image || defaults.image;
-                    options.title = options.title || defaults.title;
-                    options.text = options.text || defaults.text;
-                    options.show = options.show || defaults.show;
+                    var title = options.title || defaults.title;
+                    var show = options.show || defaults.show;
 
-                    var n = Notification.createNotification(
-                        options.image,
-                        options.title,
-                        options.text
-                    );
+                    var o = {};
+                    o.icon = options.image || defaults.image;
+                    o.body = options.text || defaults.text;
+
+                    var n = new Notification(title, o);
+
                     options.notification = n;
 
-                    if (typeof options.show === "number") {
+                    if (typeof(show) === "number") {
                         $timeout(function () {
-                            n.show();
+                            n.close();
                             options.shown = true;
-                        }, options.show);
-                    } else if (options.show === true) {
-                        n.show();
+                        }, show);
+                    } else if (show === true) {
                         options.shown = true;
                     }
                 };
@@ -86,7 +84,7 @@ angular
                      */
                     create: function (options) {
                         notifications.push(options);
-                        if (permission === 0) {
+                        if (permission === 'granted') {
                             createNotification(options);
                         } else {
                             this.checkPermission();
@@ -102,13 +100,13 @@ angular
                      * Ask for permission to show notifications.
                      */
                     checkPermission: function () {
-                        permission = Notification.checkPermission();
-                        if (permission === 0) {
+                        permission = Notification.permission;
+                        if (permission === 'granted') {
                             $rootScope.$broadcast('ng2notifications:permission::granted');
                         } else {
                             Notification.requestPermission(function (status) {
-                                permission = Notification.checkPermission();
-                                if (permission === 0) {
+                                permission = Notification.permission;
+                                if (permission === 'granted') {
                                     $rootScope.$broadcast('ng2notifications:permission::granted');
                                 } else {
                                     $rootScope.$broadcast('ng2notifications:permission::denied');
