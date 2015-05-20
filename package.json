@@ -1,0 +1,10 @@
+{
+  "name": "ng2-notifications",
+  "private": false,
+  "description": "Browser native notification provider",
+  "repository": "https://github.com/ng2/notifications",
+  "dependencies": {
+    "grunt": "*",
+    "grunt-contrib-jshint": "*"
+  }
+}
